@@ -1,0 +1,47 @@
+<div id="formContainer" class="hidden formContainer">
+  <form class="form" id="form">
+    <label class="form__label" for="name"
+      >Note name:
+      <input
+        class="form__input"
+        type="text"
+        name="name"
+        id="name"
+        autocomplete="off"
+        required
+    /></label>
+
+    <label class="form__label" for="category"
+      >Choose category:
+      <select class="form__select" id="category" name="category" required>
+        <option value="Task">Task</option>
+        <option value="Random Thought">Random Thought</option>
+        <option value="Idea">Idea</option>
+        <option value="Quote">Quote</option>
+      </select>
+    </label>
+    <label class="form__label" for="content"
+      >Note content:
+      <textarea
+        name="content"
+        id="content"
+        wrap="soft"
+        maxlength="100"
+        cols="40"
+        rows="5"
+        required
+      ></textarea>
+    </label>
+    <label class="form__label" for="dates"
+      >Dates:
+      <input
+        class="form__input"
+        type="datetime-local"
+        id="dates"
+        name="dates"
+      />
+    </label>
+    <button class="btn btn--green" id="submit" type="submit">Confirm</button>
+    <button class="btn btn--red" id="cancel" type="reset">Cancel</button>
+  </form>
+</div>
