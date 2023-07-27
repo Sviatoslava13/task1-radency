@@ -8,6 +8,67 @@
     <script type="module" src="./index.js"></script>
   </head>
   <body>
-<h1>Radency</h1>
+
+    <div class="container">
+      
+      <table class="table">
+        <thead class="table__thead thead">
+          <tr class="table__tr">
+            <th class="logo"></th>
+            <th class="table__th">Name</th>
+            <th class="table__th">Created</th>
+            <th class="table__th">Category</th>
+            <th class="table__th">Content</th>
+            <th class="table__th">Dates</th>
+            <th class="table__th" colspan="3" id="toggle">
+              <div class="table__container">
+                <svg class="table__icon" width="30" height="30">
+                  <use href="./images/icon.svg#archived"></use>
+                </svg>
+
+                <svg class="table__icon" width="30" height="30">
+                  <use href="./images/icon.svg#delete"></use>
+                </svg>
+              </div>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody class="table__tbody" data-status="active"></tbody>
+
+        <template class="table-template" id="note-template">
+          <tr class="table-template__tr">
+            <td class="logo"></td>
+            <td class="table-template__td name"></td>
+            <td class="table-template__td created"></td>
+            <td class="table-template__td category"></td>
+            <td class="table-template__td content"></td>
+            <td class="table-template__td dates"></td>
+            <td class="table-template__td edit">
+              <svg class="table-template__icon" width="30" height="30">
+                <use href="./images/icon.svg#edit"></use>
+              </svg>
+            </td>
+            <td class="table-template__td archived">
+              <svg class="table-template__icon" width="30" height="30">
+                <use href="./images/icon.svg#archived"></use>
+              </svg>
+            </td>
+            <td class="table-template__td delete">
+              <svg class="table-template__icon" width="30" height="30">
+                <use href="./images/icon.svg#delete"></use>
+              </svg>
+            </td>
+          </tr>
+        </template>
+      </table>
+
+      <button class="table__btn" id="addNote">Create Note</button>
+
+      <include src="./partials/statistics.html"></include>
+      <include src="./partials/archived.html"></include>
+    </div>
+
+    <include src="./partials/modal.html"></include>
   </body>
 </html>
