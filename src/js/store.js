@@ -1,5 +1,5 @@
 import { data } from './data.js';
-
+import { formatDate, formatCreatedDate } from './formatDate.js';
 const store = { data };
 
 export const handleEdit = (formData, id) => {
@@ -7,7 +7,7 @@ export const handleEdit = (formData, id) => {
   note.name = formData.name;
   note.category = formData.category;
   note.content = formData.content;
-  note.dates = formData.dates;
+  note.dates = formatDate(formData.dates);
 };
 
 export const handleChangeStatus = id => {
@@ -23,10 +23,10 @@ export const createNote = formStore => {
   const newData = {
     id: Date.now().toString(),
     name: formStore.name,
-    created: '',
+    created: formatCreatedDate(),
     category: formStore.category,
     content: formStore.content,
-    dates: formStore.dates,
+    dates: formatDate(formStore.dates),
     archived: false,
   };
   store.data = [...store.data, newData];
